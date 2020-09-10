@@ -29,6 +29,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/buttonsLinearLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
@@ -52,7 +53,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="myClickHandler"
-                    android:text="@string/button"
+                    android:text="@string/button7"
                     tools:text="@string/button7" />
 
                 <Button
@@ -62,7 +63,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="myClickHandler"
-                    android:text="@string/button"
+                    android:text="@string/button8"
                     tools:text="@string/button8" />
 
                 <Button
@@ -72,7 +73,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="myClickHandler"
-                    android:text="@string/button"
+                    android:text="@string/button9"
                     tools:text="@string/button9" />
 
                 <Button
@@ -82,7 +83,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="myClickHandler"
-                    android:text="@string/button"
+                    android:text="@string/buttonAddition"
                     tools:text="@string/buttonAddition" />
             </LinearLayout>
 
@@ -206,14 +207,5 @@
             </LinearLayout>
         </LinearLayout>
 
-        <Button
-            android:id="@+id/buttonEqual"
-            style="@style/Widget.AppCompat.Button.Borderless"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:onClick="myClickHandler"
-            android:text="@string/buttonEqual"
-            tools:text="@string/buttonEqual" />
     </LinearLayout>
 </LinearLayout>
