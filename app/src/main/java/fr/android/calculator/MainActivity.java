@@ -35,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
     private Integer num1 = 0;
     private Integer num2 = 0;
     private Character operator = ' ';
-    private boolean isFirstNum = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void addInNum(Integer numToAdd) {
-        if (isFirstNum) {
+        if (!operatorIsDefined()) {
             num1 = num1*10 + numToAdd;
         } else {
             num2 = num2*10 + numToAdd;
@@ -96,7 +95,6 @@ public class MainActivity extends AppCompatActivity {
 
     private void setOperator(Character operator) {
         this.operator = operator;
-        isFirstNum = false;
         updateOperationView();
     }
 
@@ -113,8 +111,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void resetValue() {
-        isFirstNum = true;
+        operator = ' ';
         num1 = 0;
         num2 = 0;
+    }
+
+    private boolean operatorIsDefined() {
+        return operator != ' ';
     }
 }
