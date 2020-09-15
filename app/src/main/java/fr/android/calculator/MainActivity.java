@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,11 +19,38 @@ public class MainActivity extends AppCompatActivity {
     private TextView operationTV;
     private TextView resTV;
     private String[] inputs;
+    Button equalButton;
+    Button equalButton2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        LinearLayout mainLL = findViewById(R.id.mainLL);
+        LinearLayout mainLL2 = findViewById(R.id.mainLL2);
+        equalButton = new Button(this);
+        equalButton.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.MATCH_PARENT));
+        equalButton.setText(R.string.res);
+        equalButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                myClickHandler(view);
+            }
+        });
+        mainLL.addView(equalButton);
+
+        equalButton2 = new Button(this);
+        equalButton2.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.MATCH_PARENT));
+        equalButton2.setText(R.string.res);
+        equalButton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                myClickHandler(view);
+            }
+        });
+        mainLL2.addView(equalButton2);
+
     }
 
     public void myClickHandler(View view) {
@@ -31,9 +59,13 @@ public class MainActivity extends AppCompatActivity {
         operationTV = (TextView) findViewById(R.id.textViewOperation);
         resTV = (TextView) findViewById(R.id.textViewResult);
 
-        if (clickedButtonId == R.id.buttonEqual || clickedButtonId == R.id.buttonEqual1) {
+        if (clickedButtonId == equalButton.getId()) {
             Integer res = calculate(operationTV.getText().toString());
-            resTV.setText(res.toString());
+            if (res == null) {
+                resTV.setText("ERR");
+            } else {
+                resTV.setText(res.toString());
+            }
         } else {
             String number = clickedButton.getText().toString();
             operationTV.append(number);
@@ -45,21 +77,21 @@ public class MainActivity extends AppCompatActivity {
         String s = "";
         if (operation == "") {
             Toast.makeText(this, "Please enter a number", Toast.LENGTH_SHORT).show();
-            return 0;
+            return null;
         } else {
             inputs = operation.split("(?!^)\\b");
             Log.d(TAG, "calculate: INPUTS = " + Arrays.toString(inputs) + " SIZE = " + inputs.length);
             if (inputs.length == 0) {
                 Toast.makeText(this, "Please enter a number", Toast.LENGTH_SHORT).show();
-                return 0;
+                return null;
             }
             if (inputs.length == 1) {
                 Toast.makeText(this, "Please enter an operand", Toast.LENGTH_SHORT).show();
-                return 0;
+                return null;
             }
             if (inputs.length == 2) {
                 Toast.makeText(this, "Please enter an other number", Toast.LENGTH_SHORT).show();
-                return 0;
+                return null;
             }
             System.out.println(Arrays.toString(inputs));
             if (inputs.length < 4) {
