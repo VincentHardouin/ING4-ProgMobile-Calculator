@@ -10,35 +10,36 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/operationTV"
+            android:id="@+id/textViewOperation"
+            style="@style/Widget.AppCompat.TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:text="TextView" />
+            android:layout_weight="2" />
 
         <TextView
-            android:id="@+id/resultatTV"
+            android:id="@+id/textViewResult"
+            style="@android:style/Widget.Holo.TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="TextView" />
+            android:layout_weight="1" />
 
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/buttonsLinearLayout"
+        android:id="@+id/mainLL"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         android:layout_weight="1"
         android:orientation="horizontal">
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:orientation="vertical">
 
             <LinearLayout
@@ -48,43 +49,39 @@
 
                 <Button
                     android:id="@+id/button7"
-                    style="@style/Widget.AppCompat.Button.Borderless"
+                    style="@style/Widget.AppCompat.Button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="myClickHandler"
-                    android:text="@string/button7"
-                    tools:text="@string/button7" />
+                    android:text="@string/seven" />
 
                 <Button
                     android:id="@+id/button8"
-                    style="@style/Widget.AppCompat.Button.Borderless"
+                    style="@style/Widget.AppCompat.Button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="myClickHandler"
-                    android:text="@string/button8"
-                    tools:text="@string/button8" />
+                    android:text="@string/eight" />
 
                 <Button
                     android:id="@+id/button9"
-                    style="@style/Widget.AppCompat.Button.Borderless"
+                    style="@style/Widget.AppCompat.Button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="myClickHandler"
-                    android:text="@string/button9"
-                    tools:text="@string/button9" />
+                    android:text="@string/nine" />
 
                 <Button
                     android:id="@+id/buttonAddition"
-                    style="@style/Widget.AppCompat.Button.Borderless"
+                    style="@style/Widget.AppCompat.Button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="myClickHandler"
-                    android:text="@string/buttonAddition"
-                    tools:text="@string/buttonAddition" />
+                    android:text="@string/addition" />
             </LinearLayout>
 
             <LinearLayout
@@ -94,43 +91,39 @@
 
                 <Button
                     android:id="@+id/button4"
-                    style="@style/Widget.AppCompat.Button.Borderless"
+                    style="@style/Widget.AppCompat.Button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="myClickHandler"
-                    android:text="@string/button4"
-                    tools:text="@string/button4" />
+                    android:text="@string/four" />
 
                 <Button
                     android:id="@+id/button5"
-                    style="@style/Widget.AppCompat.Button.Borderless"
+                    style="@style/Widget.AppCompat.Button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="myClickHandler"
-                    android:text="@string/button5"
-                    tools:text="@string/button5" />
+                    android:text="@string/five" />
 
                 <Button
                     android:id="@+id/button6"
-                    style="@style/Widget.AppCompat.Button.Borderless"
+                    style="@style/Widget.AppCompat.Button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="myClickHandler"
-                    android:text="@string/button6"
-                    tools:text="@string/button6" />
+                    android:text="@string/six" />
 
                 <Button
-                    android:id="@+id/buttonSoustraction"
-                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:id="@+id/buttonSubtraction"
+                    style="@style/Widget.AppCompat.Button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="myClickHandler"
-                    android:text="@string/buttonSoustraction"
-                    tools:text="@string/buttonSoustraction" />
+                    android:text="@string/subtraction" />
             </LinearLayout>
 
             <LinearLayout
@@ -140,43 +133,39 @@
 
                 <Button
                     android:id="@+id/button1"
-                    style="@style/Widget.AppCompat.Button.Borderless"
+                    style="@style/Widget.AppCompat.Button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="myClickHandler"
-                    android:text="@string/button1"
-                    tools:text="@string/button1" />
+                    android:text="@string/one" />
 
                 <Button
                     android:id="@+id/button2"
-                    style="@style/Widget.AppCompat.Button.Borderless"
+                    style="@style/Widget.AppCompat.Button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="myClickHandler"
-                    android:text="@string/button2"
-                    tools:text="@string/button2" />
+                    android:text="@string/two" />
 
                 <Button
                     android:id="@+id/button3"
-                    style="@style/Widget.AppCompat.Button.Borderless"
+                    style="@style/Widget.AppCompat.Button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="myClickHandler"
-                    android:text="@string/button3"
-                    tools:text="@string/button3" />
+                    android:text="@string/three" />
 
                 <Button
-                    android:id="@+id/buttonMultiplication"
-                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:id="@+id/buttonMultiply"
+                    style="@style/Widget.AppCompat.Button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="myClickHandler"
-                    android:text="@string/buttonMultiplication"
-                    tools:text="@string/buttonMultiplication" />
+                    android:text="@string/multiply" />
             </LinearLayout>
 
             <LinearLayout
@@ -186,26 +175,173 @@
 
                 <Button
                     android:id="@+id/button0"
-                    style="@style/Widget.AppCompat.Button.Borderless"
+                    style="@style/Widget.AppCompat.Button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="myClickHandler"
-                    android:text="@string/button0"
-                    tools:text="@string/button0" />
+                    android:text="@string/zero" />
 
                 <Button
-                    android:id="@+id/buttonDivision"
-                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:id="@+id/buttonDivide"
+                    style="@style/Widget.AppCompat.Button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:onClick="myClickHandler"
-                    android:text="@string/buttonDivision"
-                    tools:text="@string/buttonDivision" />
+                    android:text="@string/divide" />
 
             </LinearLayout>
         </LinearLayout>
 
+        <Button
+            android:id="@+id/buttonEqual"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:onClick="myClickHandler"
+            android:text="@string/res" />
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        android:orientation="horizontal">
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/button17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="myClickHandler"
+                    android:text="@string/seven" />
+
+                <Button
+                    android:id="@+id/button16"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:onClick="myClickHandler"
+                    android:text="@string/eight" />
+
+                <Button
+                    android:id="@+id/button15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="myClickHandler"
+                    android:text="@string/nine" />
+
+                <Button
+                    android:id="@+id/button14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="myClickHandler"
+                    android:text="@string/addition" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/button21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="myClickHandler"
+                    android:text="@string/four" />
+
+                <Button
+                    android:id="@+id/button20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="myClickHandler"
+                    android:text="@string/five" />
+
+                <Button
+                    android:id="@+id/button19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="myClickHandler"
+                    android:text="@string/six" />
+
+                <Button
+                    android:id="@+id/button18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="myClickHandler"
+                    android:text="@string/subtraction" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/button25"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="myClickHandler"
+                    android:text="@string/one" />
+
+                <Button
+                    android:id="@+id/button24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="myClickHandler"
+                    android:text="@string/two" />
+
+                <Button
+                    android:id="@+id/button23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="myClickHandler"
+                    android:text="@string/three" />
+
+                <Button
+                    android:id="@+id/button22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="myClickHandler"
+                    android:text="@string/multiply" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/button27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="myClickHandler"
+                    android:text="@string/zero" />
+
+                <Button
+                    android:id="@+id/button26"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="myClickHandler"
+                    android:text="@string/divide" />
+            </TableRow>
+        </TableLayout>
+
+        <Button
+            android:id="@+id/buttonEqual1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="myClickHandler"
+            android:text="@string/res" />
+
+    </LinearLayout>
+
 </LinearLayout>

@@ -1,18 +1,18 @@
 <resources>
     <string name="app_name">Calculator</string>
-    <string name="button0">0</string>
-    <string name="button1">1</string>
-    <string name="button2">2</string>
-    <string name="button3">3</string>
-    <string name="button4">4</string>
-    <string name="button5">5</string>
-    <string name="button6">6</string>
-    <string name="button7">7</string>
-    <string name="button8">8</string>
-    <string name="button9">9</string>
-    <string name="buttonMultiplication">*</string>
-    <string name="buttonDivision">/</string>
-    <string name="buttonAddition">+</string>
-    <string name="buttonSoustraction">-</string>
-    <string name="buttonEqual">=</string>
+    <string name="zero">0</string>
+    <string name="one">1</string>
+    <string name="two">2</string>
+    <string name="three">3</string>
+    <string name="four">4</string>
+    <string name="five">5</string>
+    <string name="six">6</string>
+    <string name="seven">7</string>
+    <string name="eight">8</string>
+    <string name="nine">9</string>
+    <string name="multiply">*</string>
+    <string name="addition">+</string>
+    <string name="subtraction">-</string>
+    <string name="divide">/</string>
+    <string name="res">=</string>
 </resources>
