@@ -61,7 +61,7 @@
                     <Button
                         android:id="@+id/button7"
                         style="@style/Widget.AppCompat.Button"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:onClick="myClickHandler"
@@ -70,7 +70,7 @@
                     <Button
                         android:id="@+id/button8"
                         style="@style/Widget.AppCompat.Button"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:onClick="myClickHandler"
@@ -79,7 +79,7 @@
                     <Button
                         android:id="@+id/button9"
                         style="@style/Widget.AppCompat.Button"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:onClick="myClickHandler"
@@ -88,7 +88,7 @@
                     <Button
                         android:id="@+id/buttonAddition"
                         style="@style/Widget.AppCompat.Button"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:onClick="myClickHandler"
@@ -104,7 +104,7 @@
                     <Button
                         android:id="@+id/button4"
                         style="@style/Widget.AppCompat.Button"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:onClick="myClickHandler"
@@ -113,7 +113,7 @@
                     <Button
                         android:id="@+id/button5"
                         style="@style/Widget.AppCompat.Button"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:onClick="myClickHandler"
@@ -122,7 +122,7 @@
                     <Button
                         android:id="@+id/button6"
                         style="@style/Widget.AppCompat.Button"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:onClick="myClickHandler"
@@ -131,7 +131,7 @@
                     <Button
                         android:id="@+id/buttonSubtraction"
                         style="@style/Widget.AppCompat.Button"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:onClick="myClickHandler"
@@ -147,7 +147,7 @@
                     <Button
                         android:id="@+id/button1"
                         style="@style/Widget.AppCompat.Button"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:onClick="myClickHandler"
@@ -156,7 +156,7 @@
                     <Button
                         android:id="@+id/button2"
                         style="@style/Widget.AppCompat.Button"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:onClick="myClickHandler"
@@ -165,7 +165,7 @@
                     <Button
                         android:id="@+id/button3"
                         style="@style/Widget.AppCompat.Button"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:onClick="myClickHandler"
@@ -174,7 +174,7 @@
                     <Button
                         android:id="@+id/buttonMultiply"
                         style="@style/Widget.AppCompat.Button"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:onClick="myClickHandler"
@@ -190,7 +190,7 @@
                     <Button
                         android:id="@+id/button0"
                         style="@style/Widget.AppCompat.Button"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:onClick="myClickHandler"
@@ -199,7 +199,7 @@
                     <Button
                         android:id="@+id/buttonDivide"
                         style="@style/Widget.AppCompat.Button"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:onClick="myClickHandler"
@@ -233,7 +233,7 @@
 
                     <Button
                         android:id="@+id/button17"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:onClick="myClickHandler"
@@ -241,7 +241,7 @@
 
                     <Button
                         android:id="@+id/button16"
-                        android:layout_width="match_parent"
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:onClick="myClickHandler"
@@ -249,7 +249,7 @@
 
                     <Button
                         android:id="@+id/button15"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:onClick="myClickHandler"
@@ -257,7 +257,7 @@
 
                     <Button
                         android:id="@+id/button14"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:onClick="myClickHandler"
@@ -271,7 +271,7 @@
 
                     <Button
                         android:id="@+id/button21"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:onClick="myClickHandler"
@@ -279,7 +279,7 @@
 
                     <Button
                         android:id="@+id/button20"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:onClick="myClickHandler"
@@ -287,7 +287,7 @@
 
                     <Button
                         android:id="@+id/button19"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:onClick="myClickHandler"
@@ -295,7 +295,7 @@
 
                     <Button
                         android:id="@+id/button18"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:onClick="myClickHandler"
@@ -309,7 +309,7 @@
 
                     <Button
                         android:id="@+id/button25"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:onClick="myClickHandler"
@@ -317,7 +317,7 @@
 
                     <Button
                         android:id="@+id/button24"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:onClick="myClickHandler"
@@ -325,7 +325,7 @@
 
                     <Button
                         android:id="@+id/button23"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:onClick="myClickHandler"
@@ -333,7 +333,7 @@
 
                     <Button
                         android:id="@+id/button22"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:onClick="myClickHandler"
@@ -347,7 +347,7 @@
 
                     <Button
                         android:id="@+id/button27"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:onClick="myClickHandler"
@@ -355,7 +355,7 @@
 
                     <Button
                         android:id="@+id/button26"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:onClick="myClickHandler"
