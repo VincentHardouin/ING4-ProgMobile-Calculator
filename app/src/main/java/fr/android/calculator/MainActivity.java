@@ -23,16 +23,16 @@ public class MainActivity extends AppCompatActivity {
         put(R.id.button9, 9);
 
         // For TableLayout buttons
-        put(R.id.button02, 0);
-        put(R.id.button12, 1);
-        put(R.id.button22, 2);
-        put(R.id.button32, 3);
-        put(R.id.button42, 4);
-        put(R.id.button52, 5);
-        put(R.id.button62, 6);
-        put(R.id.button72, 7);
-        put(R.id.button82, 8);
-        put(R.id.button92, 9);
+        put(R.id.button27, 0);
+        put(R.id.button25, 1);
+        put(R.id.button24, 2);
+        put(R.id.button23, 3);
+        put(R.id.button21, 4);
+        put(R.id.button20, 5);
+        put(R.id.button19, 6);
+        put(R.id.button17, 7);
+        put(R.id.button16, 8);
+        put(R.id.button15, 9);
     }};
 
     private HashMap<Integer, Character> operatorByIdButton = new HashMap<Integer, Character>() {{
@@ -42,10 +42,10 @@ public class MainActivity extends AppCompatActivity {
         put(R.id.buttonMultiply, '*');
 
         // For TableLayout buttons
-        put(R.id.buttonAddition2, '+');
-        put(R.id.buttonSubtraction2, '-');
-        put(R.id.buttonDivide2, '/');
-        put(R.id.buttonMultiply2, '*');
+        put(R.id.button14, '+');
+        put(R.id.button18, '-');
+        put(R.id.button26, '/');
+        put(R.id.button22, '*');
     }};
 
     private TextView operationTV;
@@ -53,30 +53,49 @@ public class MainActivity extends AppCompatActivity {
     private Integer num1 = 0;
     private Integer num2 = 0;
     private Character operator = ' ';
+    Button equalButton2;
+    Button equalButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        operationTV = findViewById(R.id.operationTV);
-        resultatTV = findViewById(R.id.resultatTV);
-        LinearLayout buttonsLayout = findViewById(R.id.buttonsLinearLayout);
-        Button equalButton = new Button(this);
-        equalButton.setId(R.id.buttonEqual);
+        operationTV = findViewById(R.id.textViewOperation);
+        resultatTV = findViewById(R.id.textViewResult);
+        LinearLayout mainLL = findViewById(R.id.mainLL);
+        LinearLayout mainLL2 = findViewById(R.id.mainLL2);
+        equalButton = new Button(this);
+        equalButton.setLayoutParams(new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.MATCH_PARENT, 1));
+        equalButton.setText(R.string.equal);
         equalButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 myClickHandler(view);
             }
         });
-        equalButton.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.MATCH_PARENT));
-        equalButton.setText(R.string.equal);
-        buttonsLayout.addView(equalButton);
+        mainLL.addView(equalButton);
+
+        equalButton2 = new Button(this);
+        equalButton2.setLayoutParams(new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.MATCH_PARENT, 1));
+        equalButton2.setText(R.string.equal);
+        equalButton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                myClickHandler(view);
+            }
+        });
+        mainLL2.addView(equalButton2);
 
     }
 
     public void myClickHandler(View view) {
-        switch (view.getId()) {
+        int clickedButtonId = view.getId();
+        if (clickedButtonId == equalButton.getId() || clickedButtonId == equalButton2.getId()) {
+            compute();
+        }
+
+        switch (clickedButtonId) {
             case R.id.button0: addInNum(valueByIdButton.get(R.id.button0)); break;
             case R.id.button1: addInNum(valueByIdButton.get(R.id.button1)); break;
             case R.id.button2: addInNum(valueByIdButton.get(R.id.button2)); break;
@@ -91,24 +110,22 @@ public class MainActivity extends AppCompatActivity {
             case R.id.buttonSubtraction: setOperator(operatorByIdButton.get(R.id.buttonSubtraction)); break;
             case R.id.buttonMultiply: setOperator(operatorByIdButton.get(R.id.buttonMultiply)); break;
             case R.id.buttonDivide: setOperator(operatorByIdButton.get(R.id.buttonDivide)); break;
-            case R.id.buttonEqual: compute(); break;
 
             // For tableLayout Buttons
-            case R.id.button02: addInNum(valueByIdButton.get(R.id.button02)); break;
-            case R.id.button12: addInNum(valueByIdButton.get(R.id.button12)); break;
-            case R.id.button22: addInNum(valueByIdButton.get(R.id.button22)); break;
-            case R.id.button32: addInNum(valueByIdButton.get(R.id.button32)); break;
-            case R.id.button42: addInNum(valueByIdButton.get(R.id.button42)); break;
-            case R.id.button52: addInNum(valueByIdButton.get(R.id.button52)); break;
-            case R.id.button62: addInNum(valueByIdButton.get(R.id.button62)); break;
-            case R.id.button72: addInNum(valueByIdButton.get(R.id.button72)); break;
-            case R.id.button82: addInNum(valueByIdButton.get(R.id.button82)); break;
-            case R.id.button92: addInNum(valueByIdButton.get(R.id.button92)); break;
-            case R.id.buttonAddition2: setOperator(operatorByIdButton.get(R.id.buttonAddition2)); break;
-            case R.id.buttonSubtraction2: setOperator(operatorByIdButton.get(R.id.buttonSubtraction2)); break;
-            case R.id.buttonMultiply2: setOperator(operatorByIdButton.get(R.id.buttonMultiply2)); break;
-            case R.id.buttonDivide2: setOperator(operatorByIdButton.get(R.id.buttonDivide2)); break;
-            case R.id.buttonEqual2: compute(); break;
+            case R.id.button27: addInNum(valueByIdButton.get(R.id.button27)); break;
+            case R.id.button25: addInNum(valueByIdButton.get(R.id.button25)); break;
+            case R.id.button24: addInNum(valueByIdButton.get(R.id.button24)); break;
+            case R.id.button23: addInNum(valueByIdButton.get(R.id.button23)); break;
+            case R.id.button21: addInNum(valueByIdButton.get(R.id.button21)); break;
+            case R.id.button20: addInNum(valueByIdButton.get(R.id.button20)); break;
+            case R.id.button19: addInNum(valueByIdButton.get(R.id.button19)); break;
+            case R.id.button17: addInNum(valueByIdButton.get(R.id.button17)); break;
+            case R.id.button16: addInNum(valueByIdButton.get(R.id.button16)); break;
+            case R.id.button15: addInNum(valueByIdButton.get(R.id.button15)); break;
+            case R.id.button14: setOperator(operatorByIdButton.get(R.id.button14)); break;
+            case R.id.button18: setOperator(operatorByIdButton.get(R.id.button18)); break;
+            case R.id.button22: setOperator(operatorByIdButton.get(R.id.button22)); break;
+            case R.id.button26: setOperator(operatorByIdButton.get(R.id.button26)); break;
         }
     }
 
