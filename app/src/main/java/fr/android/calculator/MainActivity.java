@@ -66,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
         LinearLayout mainLL = findViewById(R.id.mainLL);
         LinearLayout mainLL2 = findViewById(R.id.mainLL2);
         equalButton = new Button(this);
+        equalButton.setId(R.id.buttonEqual);
         equalButton.setLayoutParams(new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.MATCH_PARENT, 1));
         equalButton.setText(R.string.equal);
         equalButton.setOnClickListener(new View.OnClickListener() {
@@ -77,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
         mainLL.addView(equalButton);
 
         equalButton2 = new Button(this);
+        equalButton2.setId(R.id.buttonEqual2);
         equalButton2.setLayoutParams(new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.MATCH_PARENT, 1));
         equalButton2.setText(R.string.equal);
         equalButton2.setOnClickListener(new View.OnClickListener() {
@@ -90,12 +92,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void myClickHandler(View view) {
-        int clickedButtonId = view.getId();
-        if (clickedButtonId == equalButton.getId() || clickedButtonId == equalButton2.getId()) {
-            compute();
-        }
-
-        switch (clickedButtonId) {
+        switch (view.getId()) {
             case R.id.button0: addInNum(valueByIdButton.get(R.id.button0)); break;
             case R.id.button1: addInNum(valueByIdButton.get(R.id.button1)); break;
             case R.id.button2: addInNum(valueByIdButton.get(R.id.button2)); break;
@@ -110,6 +107,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.buttonSubtraction: setOperator(operatorByIdButton.get(R.id.buttonSubtraction)); break;
             case R.id.buttonMultiply: setOperator(operatorByIdButton.get(R.id.buttonMultiply)); break;
             case R.id.buttonDivide: setOperator(operatorByIdButton.get(R.id.buttonDivide)); break;
+            case R.id.buttonEqual: compute(); break;
 
             // For tableLayout Buttons
             case R.id.button27: addInNum(valueByIdButton.get(R.id.button27)); break;
@@ -126,6 +124,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.button18: setOperator(operatorByIdButton.get(R.id.button18)); break;
             case R.id.button22: setOperator(operatorByIdButton.get(R.id.button22)); break;
             case R.id.button26: setOperator(operatorByIdButton.get(R.id.button26)); break;
+            case R.id.buttonEqual2: compute(); break;
         }
     }
 
