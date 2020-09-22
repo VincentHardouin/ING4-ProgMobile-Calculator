@@ -44,14 +44,15 @@ public class MainActivity extends AppCompatActivity {
         resultatTV = findViewById(R.id.resultatTV);
         LinearLayout buttonsLayout = findViewById(R.id.buttonsLinearLayout);
         Button equalButton = new Button(this);
-        equalButton.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.MATCH_PARENT));
-        equalButton.setText(R.string.buttonEqual);
+        equalButton.setId(R.id.buttonEqual);
         equalButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                compute();
+                myClickHandler(view);
             }
         });
+        equalButton.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.MATCH_PARENT));
+        equalButton.setText(R.string.buttonEqual);
         buttonsLayout.addView(equalButton);
 
     }
@@ -72,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.buttonSoustraction: setOperator(operatorByIdButton.get(R.id.buttonSoustraction)); break;
             case R.id.buttonMultiplication: setOperator(operatorByIdButton.get(R.id.buttonMultiplication)); break;
             case R.id.buttonDivision: setOperator(operatorByIdButton.get(R.id.buttonDivision)); break;
+            case R.id.buttonEqual: compute(); break;
         }
     }
 
