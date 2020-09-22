@@ -21,13 +21,31 @@ public class MainActivity extends AppCompatActivity {
         put(R.id.button7, 7);
         put(R.id.button8, 8);
         put(R.id.button9, 9);
+
+        // For TableLayout buttons
+        put(R.id.button02, 0);
+        put(R.id.button12, 1);
+        put(R.id.button22, 2);
+        put(R.id.button32, 3);
+        put(R.id.button42, 4);
+        put(R.id.button52, 5);
+        put(R.id.button62, 6);
+        put(R.id.button72, 7);
+        put(R.id.button82, 8);
+        put(R.id.button92, 9);
     }};
 
     private HashMap<Integer, Character> operatorByIdButton = new HashMap<Integer, Character>() {{
         put(R.id.buttonAddition, '+');
-        put(R.id.buttonSoustraction, '-');
-        put(R.id.buttonDivision, '/');
-        put(R.id.buttonMultiplication, '*');
+        put(R.id.buttonSubtraction, '-');
+        put(R.id.buttonDivide, '/');
+        put(R.id.buttonMultiply, '*');
+
+        // For TableLayout buttons
+        put(R.id.buttonAddition2, '+');
+        put(R.id.buttonSubtraction2, '-');
+        put(R.id.buttonDivide2, '/');
+        put(R.id.buttonMultiply2, '*');
     }};
 
     private TextView operationTV;
@@ -52,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         equalButton.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.MATCH_PARENT));
-        equalButton.setText(R.string.buttonEqual);
+        equalButton.setText(R.string.equal);
         buttonsLayout.addView(equalButton);
 
     }
@@ -70,10 +88,27 @@ public class MainActivity extends AppCompatActivity {
             case R.id.button8: addInNum(valueByIdButton.get(R.id.button8)); break;
             case R.id.button9: addInNum(valueByIdButton.get(R.id.button9)); break;
             case R.id.buttonAddition: setOperator(operatorByIdButton.get(R.id.buttonAddition)); break;
-            case R.id.buttonSoustraction: setOperator(operatorByIdButton.get(R.id.buttonSoustraction)); break;
-            case R.id.buttonMultiplication: setOperator(operatorByIdButton.get(R.id.buttonMultiplication)); break;
-            case R.id.buttonDivision: setOperator(operatorByIdButton.get(R.id.buttonDivision)); break;
+            case R.id.buttonSubtraction: setOperator(operatorByIdButton.get(R.id.buttonSubtraction)); break;
+            case R.id.buttonMultiply: setOperator(operatorByIdButton.get(R.id.buttonMultiply)); break;
+            case R.id.buttonDivide: setOperator(operatorByIdButton.get(R.id.buttonDivide)); break;
             case R.id.buttonEqual: compute(); break;
+
+            // For tableLayout Buttons
+            case R.id.button02: addInNum(valueByIdButton.get(R.id.button02)); break;
+            case R.id.button12: addInNum(valueByIdButton.get(R.id.button12)); break;
+            case R.id.button22: addInNum(valueByIdButton.get(R.id.button22)); break;
+            case R.id.button32: addInNum(valueByIdButton.get(R.id.button32)); break;
+            case R.id.button42: addInNum(valueByIdButton.get(R.id.button42)); break;
+            case R.id.button52: addInNum(valueByIdButton.get(R.id.button52)); break;
+            case R.id.button62: addInNum(valueByIdButton.get(R.id.button62)); break;
+            case R.id.button72: addInNum(valueByIdButton.get(R.id.button72)); break;
+            case R.id.button82: addInNum(valueByIdButton.get(R.id.button82)); break;
+            case R.id.button92: addInNum(valueByIdButton.get(R.id.button92)); break;
+            case R.id.buttonAddition2: setOperator(operatorByIdButton.get(R.id.buttonAddition2)); break;
+            case R.id.buttonSubtraction2: setOperator(operatorByIdButton.get(R.id.buttonSubtraction2)); break;
+            case R.id.buttonMultiply2: setOperator(operatorByIdButton.get(R.id.buttonMultiply2)); break;
+            case R.id.buttonDivide2: setOperator(operatorByIdButton.get(R.id.buttonDivide2)); break;
+            case R.id.buttonEqual2: compute(); break;
         }
     }
 
