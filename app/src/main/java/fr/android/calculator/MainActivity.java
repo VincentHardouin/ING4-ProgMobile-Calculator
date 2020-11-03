@@ -111,15 +111,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.buttonSubtraction: setOperator(operatorByIdButton.get(R.id.buttonSubtraction)); break;
             case R.id.buttonMultiply: setOperator(operatorByIdButton.get(R.id.buttonMultiply)); break;
             case R.id.buttonDivide: setOperator(operatorByIdButton.get(R.id.buttonDivide)); break;
-            case R.id.buttonEqual: {
-                Runnable runnable = new Runnable() {
-                    @Override public void run() {
-                        compute();
-                    }
-                };
-                handler.post(runnable);
-                break;
-            }
+            case R.id.buttonEqual: compute(); break;
 
             // For tableLayout Buttons
             case R.id.button27: addInNum(valueByIdButton.get(R.id.button27)); break;
@@ -164,15 +156,28 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void compute() {
-        double result = 0;
-        switch (operator) {
-            case '+': result = num1 + num2; break;
-            case '-': result = num1 - num2; break;
-            case '*': result = num1 * num2; break;
-            case '/': result = num1 / num2; break;
-        }
-        setResultView(String.valueOf(result));
-        resetValue();
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                double result = 0;
+                switch (operator) {
+                    case '+': result = num1 + num2; break;
+                    case '-': result = num1 - num2; break;
+                    case '*': result = num1 * num2; break;
+                    case '/': result = num1 / num2; break;
+                }
+                final double res = result;
+                handler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        Log.d("ECE", "Running from the handler");
+                        setResultView(String.valueOf(res));
+                        resetValue();
+                    }
+                });
+            }
+        };
+        new Thread(runnable).start();
     }
 
     private void resetValue() {
