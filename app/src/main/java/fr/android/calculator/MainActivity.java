@@ -2,6 +2,8 @@ package fr.android.calculator;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -55,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
     private Character operator = ' ';
     Button equalButton2;
     Button equalButton;
+    Handler handler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
         });
         mainLL2.addView(equalButton2);
 
+        handler = new Handler();
     }
 
     public void myClickHandler(View view) {
@@ -152,15 +156,28 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void compute() {
-        double result = 0;
-        switch (operator) {
-            case '+': result = num1 + num2; break;
-            case '-': result = num1 - num2; break;
-            case '*': result = num1 * num2; break;
-            case '/': result = num1 / num2; break;
-        }
-        setResultView(String.valueOf(result));
-        resetValue();
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                double result = 0;
+                switch (operator) {
+                    case '+': result = num1 + num2; break;
+                    case '-': result = num1 - num2; break;
+                    case '*': result = num1 * num2; break;
+                    case '/': result = num1 / num2; break;
+                }
+                final double res = result;
+                handler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        Log.d("ECE", "Running from the handler");
+                        setResultView(String.valueOf(res));
+                        resetValue();
+                    }
+                });
+            }
+        };
+        new Thread(runnable).start();
     }
 
     private void resetValue() {
