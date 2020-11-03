@@ -1,6 +1,8 @@
 package fr.android.calculator;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -111,7 +113,8 @@ public class MainActivity extends AppCompatActivity {
             case R.id.buttonSubtraction: setOperator(operatorByIdButton.get(R.id.buttonSubtraction)); break;
             case R.id.buttonMultiply: setOperator(operatorByIdButton.get(R.id.buttonMultiply)); break;
             case R.id.buttonDivide: setOperator(operatorByIdButton.get(R.id.buttonDivide)); break;
-            case R.id.buttonEqual: compute(); break;
+//            case R.id.buttonEqual: compute(); break;
+            case R.id.buttonEqual: new calculAsync().execute(); break;
 
             // For tableLayout Buttons
             case R.id.button27: addInNum(valueByIdButton.get(R.id.button27)); break;
@@ -128,7 +131,8 @@ public class MainActivity extends AppCompatActivity {
             case R.id.button18: setOperator(operatorByIdButton.get(R.id.button18)); break;
             case R.id.button22: setOperator(operatorByIdButton.get(R.id.button22)); break;
             case R.id.button26: setOperator(operatorByIdButton.get(R.id.button26)); break;
-            case R.id.buttonEqual2: compute(); break;
+//            case R.id.buttonEqual2: compute(); break;
+            case R.id.buttonEqual2: new calculAsync().execute(); break;
         }
     }
 
@@ -155,6 +159,7 @@ public class MainActivity extends AppCompatActivity {
         updateOperationView();
     }
 
+    /*
     private void compute() {
         Runnable runnable = new Runnable() {
             @Override
@@ -179,6 +184,7 @@ public class MainActivity extends AppCompatActivity {
         };
         new Thread(runnable).start();
     }
+     */
 
     private void resetValue() {
         operator = ' ';
@@ -189,4 +195,28 @@ public class MainActivity extends AppCompatActivity {
     private boolean operatorIsDefined() {
         return operator != ' ';
     }
+
+    private class calculAsync extends AsyncTask<Void, Double, Double> {
+
+        @Override
+        protected Double doInBackground(Void... voids) {
+            Log.d("ECE", "Executing doInBackground");
+            double result = 0;
+            switch (operator) {
+                case '+': result = num1 + num2; break;
+                case '-': result = num1 - num2; break;
+                case '*': result = num1 * num2; break;
+                case '/': result = num1 / num2; break;
+            }
+            return result;
+        }
+
+        @Override
+        protected void onPostExecute(Double value) {
+            Log.d("ECE", "Executing onPostExecute, value=" + value);
+            setResultView(String.valueOf(value));
+            resetValue();
+        }
+    }
 }
+
