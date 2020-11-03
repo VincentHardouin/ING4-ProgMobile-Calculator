@@ -2,6 +2,8 @@ package fr.android.calculator;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -55,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
     private Character operator = ' ';
     Button equalButton2;
     Button equalButton;
+    Handler handler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
         });
         mainLL2.addView(equalButton2);
 
+        handler = new Handler();
     }
 
     public void myClickHandler(View view) {
@@ -107,7 +111,15 @@ public class MainActivity extends AppCompatActivity {
             case R.id.buttonSubtraction: setOperator(operatorByIdButton.get(R.id.buttonSubtraction)); break;
             case R.id.buttonMultiply: setOperator(operatorByIdButton.get(R.id.buttonMultiply)); break;
             case R.id.buttonDivide: setOperator(operatorByIdButton.get(R.id.buttonDivide)); break;
-            case R.id.buttonEqual: compute(); break;
+            case R.id.buttonEqual: {
+                Runnable runnable = new Runnable() {
+                    @Override public void run() {
+                        compute();
+                    }
+                };
+                handler.post(runnable);
+                break;
+            }
 
             // For tableLayout Buttons
             case R.id.button27: addInNum(valueByIdButton.get(R.id.button27)); break;
