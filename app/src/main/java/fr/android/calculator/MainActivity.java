@@ -11,6 +11,11 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.net.Socket;
+import java.net.UnknownHostException;
 import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity {
@@ -200,15 +205,24 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected Double doInBackground(Void... voids) {
-            Log.d("ECE", "Executing doInBackground");
-            double result = 0;
-            switch (operator) {
-                case '+': result = num1 + num2; break;
-                case '-': result = num1 - num2; break;
-                case '*': result = num1 * num2; break;
-                case '/': result = num1 / num2; break;
+            try {
+                Socket s = new Socket("10.0.2.2", 9876);
+                DataInputStream dis = new DataInputStream(s.getInputStream());
+                DataOutputStream dos = new DataOutputStream(s.getOutputStream());
+
+                // send the expression to the calculator
+                dos.writeDouble(num1);
+                dos.writeChar(operator);
+                dos.writeDouble(num2);
+
+                return dis.readDouble();
+
+                // do sth with it !
+
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-            return result;
+            return 0.0;
         }
 
         @Override
