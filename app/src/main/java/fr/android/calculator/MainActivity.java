@@ -2,10 +2,14 @@ package fr.android.calculator;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ActionBar;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -61,6 +65,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView resultatTV;
     private Integer num1 = 0;
     private Integer num2 = 0;
+    private Double resultat = 0.0;
+    private String lastOp;
     private Character operator = ' ';
     Button equalButton2;
     Button equalButton;
@@ -87,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
         });
         mainLL.addView(equalButton);
 
+
         equalButton2 = new Button(this);
         equalButton2.setId(R.id.buttonEqual2);
         equalButton2.setLayoutParams(new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.MATCH_PARENT, 1));
@@ -100,6 +107,33 @@ public class MainActivity extends AppCompatActivity {
         mainLL2.addView(equalButton2);
 
         handler = new Handler();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            Intent intent = new Intent(this, Activity2.class);
+            Log.d("ECE", "onOptionsItemSelected: " + lastOp);
+            intent.putExtra("lastOperation", lastOp);
+            startActivity(intent);
+
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     public void myClickHandler(View view) {
@@ -214,8 +248,9 @@ public class MainActivity extends AppCompatActivity {
                 dos.writeDouble(num1);
                 dos.writeChar(operator);
                 dos.writeDouble(num2);
-
-                return dis.readDouble();
+                resultat = dis.readDouble();
+                lastOp = num1 + "" + operator + num2 + "=" + resultat;
+                return resultat;
 
                 // do sth with it !
 

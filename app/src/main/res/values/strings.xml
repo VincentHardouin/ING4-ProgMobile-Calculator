@@ -15,4 +15,7 @@
     <string name="addition">+</string>
     <string name="subtraction">-</string>
     <string name="equal">=</string>
+    <string name="lastOperation">Dernier calcul :</string>
+    <string name="search">Rechercher</string>
+
 </resources>
